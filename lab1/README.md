@@ -1,2 +1,29 @@
-# os-labs
-This repository was created for submitting laboratory assignments for the "Operating Systems" course
+# Лабораторная работа №1
+**Вариант 22**
+Родитель создаёт два дочерних процесса.
+Пользователь вводит две первые строки — имена файлов для child1 и child2 (файлы открываются на запись).
+Далее пользователь вводит произвольные строки.
+Родитель с вероятностью 80% отправляет строку в pipe1, иначе - в pipe2.
+child1 и child2 читают строки из своих каналов, инвертируют их и пишут результат в свой файл.
+**Компиляция и запуск**
+```bash
+g++ parent.cpp -o parent
+g++ child.cpp -o child
+./parent
+```
+
+Пример ввода:
+```
+file1.txt
+file2.txt
+Hello world
+Test string
+```
+Пример ввода:
+```
+file1.txt
+file2.txt
+Hello world
+Test string
+```
+После Ctrl+D результаты появятся в file1.txt и file2.txt.
